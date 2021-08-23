@@ -13,6 +13,7 @@ class Server {
       login: "/api/v1/usuario",
       post: "/api/v1/post",
       auth: "/api/v1/auth",
+      upload: "/api/v1/upload",
     };
     this.db();
     this.middlewares();
@@ -27,6 +28,7 @@ class Server {
     this.app.use(this.paths.login, require("../routes/usuario"));
     this.app.use(this.paths.post, require("../routes/post"));
     this.app.use(this.paths.auth, require("../routes/auth"));
+    this.app.use(this.paths.upload, require("../routes/upload"));
   }
 
   middlewares() {
